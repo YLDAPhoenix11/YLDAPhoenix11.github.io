@@ -108,25 +108,27 @@
 
 
 
-  <meta name="description" content="This article is the reading notes of chapter2 of “cracking the PM interview”.">
-<meta name="keywords" content="reading notes,product manager,interview">
+  <meta name="description" content="Taking some notes after I watched Stanford Coursera course “Sentiment Analysis” by Dan Jurafsky and Christopher Manning.">
+<meta name="keywords" content="course notes,natural language processing">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Chapter 7 Resumes">
-<meta property="og:url" content="http://yoursite.com/2019/04/17/Chapter 7 Resumes/index.html">
+<meta property="og:title" content="Sentiment Analysis">
+<meta property="og:url" content="http://yoursite.com/2019/10/01/post/index.html">
 <meta property="og:site_name" content="Nothingness">
-<meta property="og:description" content="This article is the reading notes of chapter2 of “cracking the PM interview”.">
+<meta property="og:description" content="Taking some notes after I watched Stanford Coursera course “Sentiment Analysis” by Dan Jurafsky and Christopher Manning.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-17T22:21:33.008Z">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g7jbuqc1zkj316r07xdh5.jpg">
+<meta property="og:updated_time" content="2019-10-01T20:06:22.629Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 7 Resumes">
-<meta name="twitter:description" content="This article is the reading notes of chapter2 of “cracking the PM interview”.">
+<meta name="twitter:title" content="Sentiment Analysis">
+<meta name="twitter:description" content="Taking some notes after I watched Stanford Coursera course “Sentiment Analysis” by Dan Jurafsky and Christopher Manning.">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g7jbuqc1zkj316r07xdh5.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/17/Chapter 7 Resumes/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/01/post/">
 
 
 
@@ -136,7 +138,7 @@
   };
 </script>
 
-  <title>Chapter 7 Resumes | Nothingness</title>
+  <title>Sentiment Analysis | Nothingness</title>
   
 
 
@@ -352,7 +354,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/17/Chapter 7 Resumes/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/01/post/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="风真 (Cilence)">
@@ -369,7 +371,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Chapter 7 Resumes
+          <h1 class="post-title" itemprop="name headline">Sentiment Analysis
               
             
           </h1>
@@ -394,7 +396,7 @@
                 
               
 
-              <time title="Created: 2019-04-17 18:14:56" itemprop="dateCreated datePublished" datetime="2019-04-17T18:14:56-04:00">2019-04-17</time>
+              <time title="Created: 2019-10-01 16:03:58" itemprop="dateCreated datePublished" datetime="2019-10-01T16:03:58-04:00">2019-10-01</time>
             
 
             
@@ -412,14 +414,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/reading-notes/" itemprop="url" rel="index"><span itemprop="name">reading notes</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/reading-notes/cracking-the-PM-interview/" itemprop="url" rel="index"><span itemprop="name">cracking the PM interview</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/course-notes/" itemprop="url" rel="index"><span itemprop="name">course notes</span></a></span>
 
                 
                 
@@ -453,97 +448,73 @@
       
 
       
-        <p>This article is the reading notes of chapter2 of “cracking the PM interview”.</p>
+        <p>Taking some notes after I watched <a href="http://web.stanford.edu/~jurafsky/NLPCourseraSlides.html" target="_blank" rel="noopener">Stanford Coursera course</a> “Sentiment Analysis” by <a href="http://www.stanford.edu/people/jurafsky" target="_blank" rel="noopener">Dan Jurafsky</a> and <a href="http://nlp.stanford.edu/manning/" target="_blank" rel="noopener">Christopher Manning</a>.</p>
 <a id="more"></a>
 <hr>
-<p>This chapter is about resume.</p>
-<p>This chapter can be read with next chapter.</p>
-<p>本章讲了resume改如何写,写什么,并且专门说明了pm的resume该怎么写,还有每个东西可以在简历上停留多久(in “what to include”)。</p>
-<h1 id="The-15-Second-Rule"><a href="#The-15-Second-Rule" class="headerlink" title="The 15 Second Rule"></a>The 15 Second Rule</h1><ul>
-<li><p>Rule #1: Shorter is Better</p>
-<p>You might have to be more concise, but that’s a good thing. This means that you’re sticking to the highlights.</p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Sentiment Analysis, 也叫 opinion extraction/opinion mining/sentiment mining/subjectivity analysis，中文译作情感分析/文本情感分析，是自然语言处理 (Natural Language Processing) 的应用之一。</p>
+<p>根据Wiki</p>
+<blockquote>
+<p><strong>文本情感分析</strong>（也称为<strong>意见挖掘</strong>）是指用<a href="https://zh.wikipedia.org/wiki/自然语言处理" target="_blank" rel="noopener">自然语言处理</a>、<a href="https://zh.wikipedia.org/wiki/文本挖掘" target="_blank" rel="noopener">文本挖掘</a>以及<a href="https://zh.wikipedia.org/wiki/计算机语言学" target="_blank" rel="noopener">计算机语言学</a>等方法来识别和提取原素材中的主观信息。</p>
+</blockquote>
+<p>注意这里说的是<strong>主观信息</strong>，并没有用简单的<strong>情感</strong>一词代替，这是因为sentiment analysis并不仅仅是抽取出情感。事实上，sentiment这个词虽然可以翻译为情感，有一个释义也是”emotion”，但是也有一个释义是 “an attitude, thought, or judgment prompted by feeling” (By <a href="https://www.merriam-webster.com/dictionary/sentiment" target="_blank" rel="noopener">Merriam-webster</a>)，与opinion同义。因此sentiment analysis的sentiment不能单做为emotion看待。在本课中，Dan认为sentiment是attitude的子集，强调的主要是attitude.</p>
+<h2 id="Tasks"><a href="#Tasks" class="headerlink" title="Tasks"></a>Tasks</h2><p>要分析出sentiment，也就是要知道以下几个：</p>
+<ol>
+<li>Source，是谁的sentiment</li>
+<li>Target，对什么的sentiment</li>
+<li>what/type，什么样的的sentiment</li>
+<li>除此之外，也需要知道包含sentiment的文本</li>
+</ol>
+<p>根据难度的不同，可以将sentiment analysis 分成以下task:</p>
+<ol>
+<li>Easy模式：Polarity detection，判断positive/negative</li>
+<li>Medium模式：在判断的基础上为attitude给出强弱</li>
+<li>Hard模式：判断target/source，以及更加复杂的attitude</li>
+</ol>
+<h2 id="Some-projects"><a href="#Some-projects" class="headerlink" title="Some projects"></a>Some projects</h2><ol>
+<li><p><a href="https://www.kaggle.com/c/twitter-sentiment-analysis2/overview" target="_blank" rel="noopener">Google - Twitter Sentiment Analysis</a></p>
+<p>判断sentiment是positive/negative/neural</p>
 </li>
-<li><p>Rule #2: Bullets, Not Blobs</p>
-<p>Blobs of text—that is, bullets or paragraphs that are three lines or longer—tend to not be read. Keep things short.</p>
-<p>Anything that’s three lines of text or more should be condensed. Additionally, you should aim to have no more than 50 percent of your bullets expand to two lines.</p>
+<li><p><a href="https://arxiv.org/pdf/1010.3003&amp;" target="_blank" rel="noopener">Twitter mood predicts the stock market</a></p>
 </li>
-<li><p>Rule #3: Accomplishments, Not Responsibilities</p>
-<p>People don’t care what you were told to do; they care what you did.</p>
-<p>For example:</p>
-<p>Responsibility Oriented: Design features for Amazon S3 and oversee development of the features across software engineers and testers. </p>
-<p>Accomplishment Oriented: Designed the SS Frontline feature, managed its development, and led its integration across three products, leading to an additional $10 million in revenue.</p>
-<p>（Compare responsibilty oriented and accomplishment oriented in resume.）</p>
-<p>Focus on the impact itself; the “what” more so than the “how” (although both are important).</p>
-<p>As much as possible, quantify your accomplishments.</p>
+<li><p><a href="http://help.sentiment140.com/" target="_blank" rel="noopener">Twitter sentiment APP</a></p>
 </li>
-<li><p>Rule #4: Use a Good Template</p>
-<ul>
-<li>Two or three columns, one for company names and the other for jobs titles.</li>
-<li>No left column dedicated to headings.</li>
-<li>Limited text stylings.</li>
-<li>Reasonable use of whitespace.</li>
-<li>Reasonable font size and margins.</li>
-<li>Bullets.</li>
+</ol>
+<h1 id="Polarity-detection-and-Baseline-Algorithm"><a href="#Polarity-detection-and-Baseline-Algorithm" class="headerlink" title="Polarity detection and Baseline Algorithm"></a>Polarity detection and Baseline Algorithm</h1><p>baseline algorithm采取常见的自然语言处理分类算法。</p>
+<p>以polarity detection为例，将sentiment看做类别，比如positive/negative，然后对文本进行分类。主要步骤包括：</p>
+<ol>
+<li><p>Tokenization</p>
+</li>
+<li><p>Feature extraction</p>
+</li>
+<li><p>Classification</p>
+</li>
+</ol>
+<p>其中，常用的分类算法包括Naive Bayes, Max entropy, SVM, 且MaxEnt和SVM在该task中的表现比NB好。本课程并没有介绍前两者比后者好的原因，但是我认为应该主要是由于朴素贝叶斯分类器的“特征之间相互独立”条件无法达到（一个句子里各个词之间并不是相互独立的）。</p>
+<h2 id="Deal-with-negation"><a href="#Deal-with-negation" class="headerlink" title="Deal with negation"></a>Deal with negation</h2><p>本课中介绍了一种非常intuitive的处理否定的方式：</p>
+<p>当分句中出现了否定，在分句后所有的词前加上not</p>
+<p>举例（stole from Dan’s slides）：</p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g7jbuqc1zkj316r07xdh5.jpg" alt=""></p>
+<h2 id="Boolean-Multinomial-Naïve-Bayes"><a href="#Boolean-Multinomial-Naïve-Bayes" class="headerlink" title="Boolean Multinomial Naïve Bayes"></a>Boolean Multinomial Naïve Bayes</h2><p>本课程中选用了boolean multinomial naive bayes而不是在文本分类中常见的multinomial naive bayes。两者的区别在于前者只关注词是否出现，而后者会关注count。因此，我认为这实际上是一种伯努利朴素贝叶斯分类器。这样做的原因是因为对于sentiment analysis而言，一个代表positive/negative的词只要出现了一次，即可表明态度，多次出现与只出现一次表达的态度差别不大。（这里以polarity detection为例）</p>
+<h2 id="Scaled-likelihood"><a href="#Scaled-likelihood" class="headerlink" title="Scaled likelihood"></a>Scaled likelihood</h2><p>这是一个需要注意的点。</p>
+<p>在一些文本，比如评分文本中，会出现给出不同评分的人数不同（打8-10分的比打2分的人多），不同词语的使用频率不同等问题，这时候要用scaled likelihood，不能直接使用frequency/count。</p>
+<h1 id="Lexicon"><a href="#Lexicon" class="headerlink" title="Lexicon"></a>Lexicon</h1><p>sentiment analysis是一类非常依赖词典的任务，通常我们需要知道某个词属于哪一个attitude，也就是说我们要知道某个词属于哪一类。</p>
+<h2 id="commonly-used-lexicon"><a href="#commonly-used-lexicon" class="headerlink" title="commonly-used lexicon"></a>commonly-used lexicon</h2><ul>
+<li><strong>The General Inquirer</strong></li>
+<li><strong>LIWC(Linguistic Inquiry and Word Count)</strong></li>
+<li>MPQA Subjectivity Cues Lexicon</li>
+<li>Bing Liu Opinion Lexicon</li>
+<li>SentiWordNet</li>
 </ul>
-</li>
-<li><p>Rule #5: Don’t Skip the Best Stuff</p>
-<p>There are no hard and fast rules about what belongs on your resume and what doesn’t. If it makes you a <strong>more interesting or more attractive</strong> candidate, include it.</p>
-</li>
-</ul>
-<h1 id="Attributes-of-a-Good-PM-Resume"><a href="#Attributes-of-a-Good-PM-Resume" class="headerlink" title="Attributes of a Good PM Resume"></a>Attributes of a Good PM Resume</h1><p>It is important to demonstrate these skills:</p>
-<ul>
-<li><p>Passion for Tech</p>
-</li>
-<li><p>Initiative</p>
-</li>
-<li><p>Leadership</p>
-</li>
-<li><p>Impact</p>
-<p>Show that you’ve had a positive impact in your prior roles. <strong>Be clear about what you’ve personally driven, since your team’s accomplishments are much less relevant than your own.</strong> Explicitly state what <strong>you’</strong>ve built, created, led, or implemented. <strong>Avoid weak phrases such as “worked with” and “helped with.”</strong></p>
-</li>
-<li><p>Technical skills</p>
-</li>
-<li><p>Attention to detail</p>
-</li>
-</ul>
-<h1 id="What-to-include"><a href="#What-to-include" class="headerlink" title="What to include"></a>What to include</h1><ul>
-<li><p>Objectives: No</p>
-</li>
-<li><p>Summary: Rarely</p>
-</li>
-<li><p>Skills: As Needed</p>
-<p>You might want to include a skills section on your resume, particularly if you have programming skills or experience with design software. Skip obvious skills, such as Microsoft Word.</p>
-</li>
-<li><p>Awards: Yes—And Make Them Meaningful</p>
-<p>You should list awards you’ve received. Even ones that don’t seem directly applicable to the skillset are often relevant in showing success, hard work, or creativity.</p>
-<p>Ideally, your resume should describe what the award is for and how <strong>selective</strong> it is.</p>
-</li>
-<li><p>Activities: Sometimes</p>
-</li>
-<li><p>Projects: Yes</p>
-</li>
-<li><p>Website URL: Yes</p>
-<p>If you have a website or blog, you should include the URL on your resume. If you don’t have a website, consider building one.</p>
-<p>Some basic personal information is fine, but <strong>keep the website mostly professional.</strong> Whether you list it or not, employers will likely look at it.</p>
-</li>
-<li><p>Social Media Accounts: Maybe</p>
-</li>
-<li><p>College/University Details: Sometimes</p>
-<ul>
-<li>Programming Projects: If you have programming projects, these can stay on your resume for about 2 - 3 years after graduation.</li>
-</ul>
-</li>
-</ul>
-<p><strong>How long is appropriate for you depends on what the item shows, how important that skillset is, how else you show that, and what the opportunity cost of including that item is.</strong> </p>
-<ul>
-<li><p>GPA</p>
-</li>
-<li><p>Online Courses and “Extracurricular” Education</p>
-<p>The tricky thing is how to list an online course. If the course is significant enough, you can list it under “Education,” but more likely you’ll put this in an “Additional Information” section.</p>
-<p>Find ways to make these classes sound more legitimate. If you have a (good) grade, you can list that. Or, if you have completed interesting projects for these courses, that will help as well.</p>
-</li>
-</ul>
-<p><strong>(Search book to find more details: after how many years should I remove some projects?)</strong></p>
+<p>其中The General Inquirer是通用领域的；LIWC是社会学、心理学常用词典；除了SentiWordNet，其他字典的差别不大。</p>
+<h2 id="Build-lexicon"><a href="#Build-lexicon" class="headerlink" title="Build lexicon"></a>Build lexicon</h2><p>建词典的基本思路是半监督学习的思路，首先要用种子集(seed-set)，然后通过种子集学习和标记其他词语。本课程中介绍了三种用来学习字典的算法，主要是针对Polarity detection：</p>
+<ol>
+<li><strong>Hatzivassiloglou and McKeown</strong>的算法</li>
+<li>基本思想是通过” and”和“but”来判断两个词的attitude是一致还是不一致，通过count来计算两者一致/不一致的程度。</li>
+<li><strong>Turney Algorithm</strong></li>
+<li>基本思想是通过短语的共现来学习，如果一个短语与excellent一起出现了很多次，就更可能是positive的。Turney algorithm学习的是短语而非词的极性，可以通过学习某一领域的文档学习到domain-specific information，效果比较好。</li>
+<li><strong>Use WordNet to learn Polarity</strong></li>
+<li>基本思想是用WordNet的同义词/近义词/反义词等来学习。</li>
+</ol>
 
       
     </div>
@@ -567,11 +538,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/reading-notes/" rel="tag"># reading notes</a>
+            <a href="/tags/course-notes/" rel="tag"># course notes</a>
           
-            <a href="/tags/product-manager/" rel="tag"># product manager</a>
-          
-            <a href="/tags/interview/" rel="tag"># interview</a>
+            <a href="/tags/natural-language-processing/" rel="tag"># natural language processing</a>
           
         </div>
       
@@ -584,8 +553,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/17/推荐系统（一）/" rel="next" title="推荐系统(一)">
-                <i class="fa fa-chevron-left"></i> 推荐系统(一)
+              <a href="/2019/04/17/Chapter 7 Resumes/" rel="next" title="Chapter 7 Resumes">
+                <i class="fa fa-chevron-left"></i> Chapter 7 Resumes
               </a>
             
           </div>
@@ -593,10 +562,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/01/post/" rel="prev" title="Sentiment Analysis">
-                Sentiment Analysis <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -784,7 +749,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#The-15-Second-Rule"><span class="nav-number">1.</span> <span class="nav-text">The 15 Second Rule</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Attributes-of-a-Good-PM-Resume"><span class="nav-number">2.</span> <span class="nav-text">Attributes of a Good PM Resume</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-to-include"><span class="nav-number">3.</span> <span class="nav-text">What to include</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tasks"><span class="nav-number">1.1.</span> <span class="nav-text">Tasks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Some-projects"><span class="nav-number">1.2.</span> <span class="nav-text">Some projects</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Polarity-detection-and-Baseline-Algorithm"><span class="nav-number">2.</span> <span class="nav-text">Polarity detection and Baseline Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Deal-with-negation"><span class="nav-number">2.1.</span> <span class="nav-text">Deal with negation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Boolean-Multinomial-Naïve-Bayes"><span class="nav-number">2.2.</span> <span class="nav-text">Boolean Multinomial Naïve Bayes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scaled-likelihood"><span class="nav-number">2.3.</span> <span class="nav-text">Scaled likelihood</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lexicon"><span class="nav-number">3.</span> <span class="nav-text">Lexicon</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#commonly-used-lexicon"><span class="nav-number">3.1.</span> <span class="nav-text">commonly-used lexicon</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Build-lexicon"><span class="nav-number">3.2.</span> <span class="nav-text">Build lexicon</span></a></li></ol></li></ol></div>
             
 
           </div>
