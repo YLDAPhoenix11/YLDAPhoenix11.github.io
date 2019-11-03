@@ -117,7 +117,7 @@
 <meta property="og:description" content="Taking some notes after I watched Stanford Coursera course “Sentiment Analysis” by Dan Jurafsky and Christopher Manning.">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g7jbuqc1zkj316r07xdh5.jpg">
-<meta property="og:updated_time" content="2019-10-01T20:11:06.926Z">
+<meta property="og:updated_time" content="2019-11-03T14:40:46.591Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sentiment Analysis">
 <meta name="twitter:description" content="Taking some notes after I watched Stanford Coursera course “Sentiment Analysis” by Dan Jurafsky and Christopher Manning.">
@@ -508,12 +508,15 @@
 <p>其中The General Inquirer是通用领域的；LIWC是社会学、心理学常用词典；除了SentiWordNet，其他字典的差别不大。</p>
 <h2 id="Build-lexicon"><a href="#Build-lexicon" class="headerlink" title="Build lexicon"></a>Build lexicon</h2><p>建词典的基本思路是半监督学习的思路，首先要用种子集(seed-set)，然后通过种子集学习和标记其他词语。本课程中介绍了三种用来学习字典的算法，主要是针对Polarity detection：</p>
 <ol>
-<li><strong>Hatzivassiloglou and McKeown</strong>的算法</li>
-<li>基本思想是通过” and”和“but”来判断两个词的attitude是一致还是不一致，通过count来计算两者一致/不一致的程度。</li>
-<li><strong>Turney Algorithm</strong></li>
-<li>基本思想是通过短语的共现来学习，如果一个短语与excellent一起出现了很多次，就更可能是positive的。Turney algorithm学习的是短语而非词的极性，可以通过学习某一领域的文档学习到domain-specific information，效果比较好。</li>
-<li><strong>Use WordNet to learn Polarity</strong></li>
-<li>基本思想是用WordNet的同义词/近义词/反义词等来学习。</li>
+<li><p><strong>Hatzivassiloglou and McKeown</strong>的算法</p>
+<p>基本思想是通过” and”和“but”来判断两个词的attitude是一致还是不一致，通过count来计算两者一致/不一致的程度。</p>
+</li>
+<li><p><strong>Turney Algorithm</strong></p>
+<p>基本思想是通过短语的共现来学习，如果一个短语与excellent一起出现了很多次，就更可能是positive的。Turney algorithm学习的是短语而非词的极性，可以通过学习某一领域的文档学习到domain-specific information，效果比较好。</p>
+</li>
+<li><p><strong>Use WordNet to learn Polarity</strong></p>
+<p>基本思想是用WordNet的同义词/近义词/反义词等来学习。</p>
+</li>
 </ol>
 
       
