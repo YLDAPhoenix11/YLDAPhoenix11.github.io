@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Course note of A/B testing on Udacity: Lesson 3">
+<meta name="keywords" content="course notes,data analytics,A&#x2F;B testing">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Choosing and Characterizing metrics">
+<meta property="og:url" content="http://yoursite.com/2020/03/22/Choosing and Characterizing metrics/index.html">
+<meta property="og:site_name" content="Nothingness">
+<meta property="og:description" content="Course note of A/B testing on Udacity: Lesson 3">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1ga9ea9zqr1j31f40rndyz.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1ga9dwkoebbj31c00u0u0x.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1ga9ehq61njj31c00u01ky.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1ga9dwiwbfnj31c00u0b2a.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1ga9dwy66lzj31c00u0npe.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1ga9dwpbpndj31c00u0x6p.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gaboqpzo1uj31c00u0x6p.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gabor8bqbjj31c00u04qq.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gaborn2c77j31c00u0kjl.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gabos5rmhij31ga0u0b29.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gaboswrajyj31c00u0kjl.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gaboub05kxj31c00u0npd.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gabovjy851j31c00u0b29.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gabowl9f50j31kc0tex1r.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gabp02j4q3j31fx0u0kjl.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gabp0bik0fj31c00u0x6p.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gabp0z8ymwj31c00u0hdu.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gatu29qpsaj31c00u01ky.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gavwn64wepj31jx0u07wh.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gavwnehnqwj31mv0u04qp.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gavwnu915vj31k10u07wh.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gbgr5as2nqj31lx0u07wh.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gatwcprdj5j31c00u0hdt.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gavwtq7povj31fp0sah7c.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gavyfmn48vj31wc0rv7wh.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gaw4f70l4jj31dw0qttes.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gaw4ax5rkqj31qo0u0b29.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gaw4e6nj0hj31920u0e81.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gaw4jqxlgbj31c00u0npd.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gaw65cngu9j31p40u04qp.jpg">
+<meta property="og:updated_time" content="2020-03-22T06:49:38.278Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Choosing and Characterizing metrics">
+<meta name="twitter:description" content="Course note of A/B testing on Udacity: Lesson 3">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1ga9ea9zqr1j31f40rndyz.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/03/22/Choosing and Characterizing metrics/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Choosing and Characterizing metrics | Nothingness</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nothingness</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/22/Choosing and Characterizing metrics/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="风真 (Cilence)">
+      <meta itemprop="description" content="A seer to be">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nothingness">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Choosing and Characterizing metrics
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-03-22 14:48:02" itemprop="dateCreated datePublished" datetime="2020-03-22T14:48:02+08:00">2020-03-22</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/course-notes/" itemprop="url" rel="index"><span itemprop="name">course notes</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/course-notes/data-analytics/" itemprop="url" rel="index"><span itemprop="name">data analytics</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><em>Course note of <a href="https://www.udacity.com/course/ab-testing--ud257" target="_blank" rel="noopener">A/B testing on Udacity</a>: Lesson 3</em></p>
+<a id="more"></a>
+<hr>
+<h1 id="Choosing-and-Characterizing-metrics"><a href="#Choosing-and-Characterizing-metrics" class="headerlink" title="Choosing and Characterizing metrics"></a>Choosing and Characterizing metrics</h1><ul>
+<li><p>Two types of metrics and their use cases:</p>
+<ul>
+<li>invariant checking/sanity checking metrics: metrics should not change across the experiment and the control. For example, the number of users in two groups in experiment and do they have the same distribution, like country, age, etc. For sanity checking may use multiple metrics</li>
+<li>evaludation metrics: high-level business metrics+detail metrics. For evaluation metrics #metrics depends company. For multiple metrics, can create a composed metric - an objective function, or OEC (overall evaluation criteria) to combine metrics.</li>
+</ul>
+</li>
+<li><p>Steps:</p>
+<ol>
+<li><p>High-level business metrics:</p>
+<p>metrics that everyone will understand, such as active users, click-through-probability</p>
+</li>
+<li><p>Figure out details:</p>
+<p>how do you define “active”?</p>
+</li>
+<li><p>summarize them into a single metric:</p>
+<p>like sum, median, etc</p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="Define"><a href="#Define" class="headerlink" title="Define"></a>Define</h2><p><strong>Brainstorm and establish metrics, from high-level to practical.</strong></p>
+<h3 id="Refining-the-customer-funnel"><a href="#Refining-the-customer-funnel" class="headerlink" title="Refining the customer funnel"></a>Refining the customer funnel</h3><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1ga9ea9zqr1j31f40rndyz.jpg" alt=""></p>
+<p><strong>Search “Adacity” may not be a good answer since not search is just one type of acquisition; </strong></p>
+<p><strong>key idea: 1. break apart the original stage &amp; insert before or after original stages 2. follow the business objective.</strong> Since there is helping students get jobs in business objective, it is important to add get jobs in the final stage of tunnel.</p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1ga9dwkoebbj31c00u0u0x.jpg" alt=""></p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1ga9ehq61njj31c00u01ky.jpg" alt=""></p>
+<p>Users may not use coaching; Users may also switch between homepage and course list. But it is still a funnel.</p>
+<p>Each stage is a metric. Use more rates or probabilty than count since they are better at evaluation, such as the users switching between homepage and course list. It is better to use the convertion rate from homepage visits to course list visits.</p>
+<h3 id="Choose-metrics"><a href="#Choose-metrics" class="headerlink" title="Choose metrics"></a>Choose metrics</h3><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1ga9dwiwbfnj31c00u0b2a.jpg" alt=""></p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1ga9dwy66lzj31c00u0npe.jpg" alt=""></p>
+<p>我的答案是3； 1，2； 5</p>
+<ul>
+<li>Update a description on the course list page: aimed at increase the conversion rate from course list to specific course; can also use <strong>continued progression down funnel</strong> as supplement, that is CTR to the course list page, or a drop-off rate of courses (may increase if descriptions are misleding).</li>
+<li>Increase size of “start now” button: can also use probability. But it is better to use rates since <strong>Rates are usually better for measuring the usability of a button</strong>. (If it is hard to find or hard to click, users may click multiple times, and CTR will decrease?)</li>
+<li>Explain benefits of paid service: can also use user retention (How long do users continue paying for coach) or usage metrics (among the users using coaching, do they use more). </li>
+</ul>
+<p>###Difficult metrics</p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1ga9dwpbpndj31c00u0x6p.jpg" alt=""></p>
+<p>我的答案：2，3.</p>
+<p>Rate of returning for 2nd course is also difficult because it will take too long to meature the metric (it will take a long time for users to return for 2nd course).</p>
+<p>Note that difficult metrics are metrics <strong>take too long </strong>and <strong>do not have data</strong>.</p>
+<h4 id="Techniques-for-solving-difficult-metrics"><a href="#Techniques-for-solving-difficult-metrics" class="headerlink" title="Techniques for solving difficult metrics"></a>Techniques for solving difficult metrics</h4><ol>
+<li><p>external data</p>
+<p>(1) companys that collect data, like NIelsen; </p>
+<p>(2) companys run surveys of users; </p>
+<p>(3) academic research, like eye tracking. </p>
+<p>Use for</p>
+<p>(1)brainstorming (think of new metrics), </p>
+<p>(2) validation metrics, develop validation techiniques. </p>
+</li>
+<li><p>use our own data: </p>
+<p>(1) use all our existing data: </p>
+<ul>
+<li><p>retrospective analysis/observational analysis, can combined with surveys&amp;focus groups&amp;etc, shows correlation not causation ; </p>
+</li>
+<li><p>running experiement: run an experiment to validate whether or not we can use a metrics for evaluating experiements, measure that metric is actually going to move as we make changes: for example, use time that student takes to complete the quiz as metrics to measure students’ undertanding of the material, we need to try <em>different quizs/on different formulation</em>, and test which one move the proposed metric </p>
+</li>
+</ul>
+<p>(2) gather new data: user experience research, survey, focus groups, etc</p>
+<p>more robust to combine these methods. </p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gaboqpzo1uj31c00u0x6p.jpg" alt=""></p>
+<p><strong>Pdf on website</strong></p>
+<p>UER: can use special equipment, like eye tracking; need to validate results, such as retrospective analysis to see how  it varies over time or experiments to see how it varies when make changes</p>
+<p>Surveys: users do not need to tell truth</p>
+</li>
+</ol>
+<ul>
+<li><p><strong>Example of applying other techniques</strong>: </p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gabor8bqbjj31c00u04qq.jpg" alt=""></p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gaborn2c77j31c00u0kjl.jpg" alt=""></p>
+<ul>
+<li>Rate of returning for 2nd course: if can find some metrics predictable, can use it as proxy in experiments, like the proxies in 3rd metrics.</li>
+<li>Probability of finding information via search: Can use proxies, and validate them with External data; Human evaludation is pay human raters to evaluate the site.</li>
+</ul>
+</li>
+<li><p>Quiz</p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gabos5rmhij31ga0u0b29.jpg" alt=""></p>
+<p>我的答案：4， 6； 1，6 ；2， 5</p>
+<ul>
+<li><p>measure user engagement: use UER and observed how engaged users are; retrospective analysis of users who have completed the courses and see what they have in common.</p>
+</li>
+<li><p>Decide whether to excend inventory in shopping site: add new proeducts will be an expensive investment; user focus groups to get ideas from users about what they want </p>
+</li>
+<li><p>which ads get most views: do retrospective analysis: assume that click is correlated with view, or see the lowest position where anyone has clicked and assume that they have viewed all before</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Build-Intuition"><a href="#Build-Intuition" class="headerlink" title="Build Intuition"></a>Build Intuition</h2><p><strong>Build intuition and understand sensitivity and robustness.</strong></p>
+<p>Turning a high-level metric into a well-defined metric:</p>
+<ul>
+<li><p>fully define exactly what data are going to look at to define the metrics: numerator/denominator/filter/ways to compute a metric</p>
+<p>Many nuances, for example, in CTR, use cookie or just click?  a user view in 11:55pm and click on 12:01am, is he/she users in first day or last day? Or a user view the page but click 2 hours later, do we count it as once?</p>
+<p>Consider the technology, JS ping back is different in IE and Safiri, so also need to work with engineering team to <strong>understand nuances and get accurate data</strong>.</p>
+</li>
+<li><p>summarize metric</p>
+</li>
+</ul>
+<h3 id="Example-of-Define-a-metric"><a href="#Example-of-Define-a-metric" class="headerlink" title="Example of Define a metric"></a>Example of Define a metric</h3><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gaboswrajyj31c00u0kjl.jpg" alt=""></p>
+<p>When using different time interval, get different value. </p>
+<p>In this example, user click, then reload  but do not click (5 minutes later). After 30 seconds, click. After 12 hours, reload but not click.</p>
+<p>If per minute, orange rectangles show the groups; first and second groups have click, last one does not. </p>
+<p>If per hour, purple lines show the groups; first has click, last one does not.</p>
+<p>If per day, all events belongs to one group. CTR = 1</p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gaboub05kxj31c00u0npd.jpg" alt=""></p>
+<p>Definition2 (use page views instead of cookie) is easier to implement than definition1. To implement definition2, give each pageview a unique id. If user refresh page, it will generate a new page view but the cookie will remains same. So the CTR will be different. </p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gabovjy851j31c00u0b29.jpg" alt=""></p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gabowl9f50j31kc0tex1r.jpg" alt=""></p>
+<p>Double click: cookie and page view prob will count as single click.</p>
+<p>Back button caches page: It will generate a new page view. cookie prob will count 1 page view while the other two will count 2 page views. </p>
+<p>Click-tracking bug: If two clicks are recorded instead of one, similar with double-click. If click is missing, all will be influenced.</p>
+<h3 id="Filtering-and-Segmenting"><a href="#Filtering-and-Segmenting" class="headerlink" title="Filtering and Segmenting"></a>Filtering and Segmenting</h3><ul>
+<li><p>Filter: filter the traffic, aimed at <strong>de-bias data or dull-bias data</strong></p>
+<p>external reasons: spam, fraud, etc; </p>
+<p>internal reasons: test what if if only change on subset of traffic and increase the power and sensitivity of experiment. For example, only test on English traffic. </p>
+<p><strong>Do not introduce bias when filtering</strong>. For example, filter long session which may because of the website, or filter on user id where there are users without accounts. To test whether it introduce bias, slice the data (by country, etc) and complete metrics on all of these slices,  or look at week over week or day over day data. <strong>Most important: Build intuition and know what changes are expected and what are not.</strong></p>
+</li>
+</ul>
+<h4 id="Examples"><a href="#Examples" class="headerlink" title="Examples:"></a>Examples:</h4><ul>
+<li><p>week over week/ year over year</p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gabp02j4q3j31fx0u0kjl.jpg" alt=""></p>
+<p>week over week: # in Mon of this week/# in Mon of last week (here the spike shows that it is not due to week variation)</p>
+<p>year over year: # in day of this year/# in day of last year (the weekday may not correspond in two years, so if there is weekend effect, it will not be smooth)</p>
+</li>
+<li><p>slice data: </p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gabp0bik0fj31c00u0x6p.jpg" alt=""></p>
+</li>
+<li><p>Quiz:<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gabp0z8ymwj31c00u0hdu.jpg" alt=""></p>
+<p>By platform: mobile or web</p>
+<p>我的答案：3，4，6</p>
+<p>CTR and CTP over time cannot tell whether there is a problem alone. </p>
+<p>Both rate and probability on same graph: In general, rates are higher than probability. <strong>So it is expected that rates are higher than probabilities. And it is hard to know how much higher would the rates be.</strong></p>
+<p>CTR by platforms: Users’ behavior may be different on different platform.  It is hard to tell whether it is because of JS bug or just user behavior.</p>
+</li>
+</ul>
+<h3 id="Summary-Metrics"><a href="#Summary-Metrics" class="headerlink" title="Summary Metrics"></a>Summary Metrics</h3><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gatu29qpsaj31c00u01ky.jpg" alt=""></p>
+<h4 id="sensititvity-and-robustness"><a href="#sensititvity-and-robustness" class="headerlink" title="sensititvity and robustness"></a>sensititvity and robustness</h4><ul>
+<li><p>Mean: sensitive; median: robust</p>
+</li>
+<li><p>how to measure sensitivity and robustness?</p>
+<ol>
+<li><p>running experiements or using experiments already have: whether the metrics respond to the changes</p>
+<p>use a vs. a experiment to determine whether metrics are too sensitive: do not change anything </p>
+</li>
+<li><p>retrospective analysis</p>
+</li>
+</ol>
+</li>
+<li><p>Example of retrospective analysis:</p>
+<p>plot histogram: (<strong>The distributions are similar so these videos are comparable</strong>)</p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gavwn64wepj31jx0u07wh.jpg" alt=""></p>
+<p>compare different metrics: (<strong>Must make sure these 5 videos are comparable</strong>)</p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gavwnehnqwj31mv0u04qp.jpg" alt=""></p>
+<p>90th and 99th percentile changes among different videos</p>
+</li>
+<li><p>Example of experiment:</p>
+<p>Histogram:</p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gavwnu915vj31k10u07wh.jpg" alt=""></p>
+<p>Video 1 have the highest resolution and highest load time.</p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gbgr5as2nqj31lx0u07wh.jpg" alt=""></p>
+<p>Median and 80th percentile do not change among different videos.</p>
+</li>
+</ul>
+<h2 id="Characterize"><a href="#Characterize" class="headerlink" title="Characterize"></a>Characterize</h2><p><strong>How to characterize the varaibility of the metrics.</strong></p>
+<h3 id="variability"><a href="#variability" class="headerlink" title="variability"></a>variability</h3><ul>
+<li>Absolute difference vs. relative difference</li>
+</ul>
+<h4 id="calculating-variability"><a href="#calculating-variability" class="headerlink" title="calculating variability"></a>calculating variability</h4><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gatwcprdj5j31c00u0hdt.jpg" alt=""></p>
+<ul>
+<li><p>Quiz: calculating variablity analytically (with distribution)</p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gavwtq7povj31fp0sah7c.jpg" alt=""></p>
+</li>
+<li><p>calculating  variability empirically:</p>
+<ul>
+<li><p>calculate with non-parametric: <a href="[https://baike.baidu.com/item/%E7%AC%A6%E5%8F%B7%E6%A3%80%E9%AA%8C](https://baike.baidu.com/item/符号检验">sign test</a>) </p>
+</li>
+<li><p>A vs A experiment: run many a/a experiment with large enough samples, or run a big a/a experiment and <strong>bootstrap</strong></p>
+<p>in reality: analytical (with simple metrics) → bootstrap (when metrics become complicated) → are they consistent? (if not, many a/a experiments)</p>
+</li>
+</ul>
+</li>
+<li><p>Examples:</p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gavyfmn48vj31wc0rv7wh.jpg" alt=""></p>
+<ol>
+<li><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gaw4f70l4jj31dw0qttes.jpg" alt=""></p>
+<p>May plot the results of different experiments and  compare them with assumption distribution.</p>
+</li>
+<li><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gaw4ax5rkqj31qo0u0b29.jpg" alt=""></p>
+<p>need to make an assumption of metrics, for example, metrics are normally distribution</p>
+<p>how to calculate SD (calculate the SD of difference between groups):<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gaw4e6nj0hj31920u0e81.jpg" alt=""></p>
+</li>
+<li><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gaw4jqxlgbj31c00u0npd.jpg" alt=""></p>
+<p>discard 2.5% of values of each side, then the range of the remaining data will give 95% confidence interval.</p>
+<p>lower bound and higher bound of the range is just the confidence interval, <strong>do not need to add average</strong>.</p>
+</li>
+</ol>
+</li>
+<li><p>Quiz:</p>
+<p>Data:</p>
+<p><a href="https://docs.google.com/spreadsheets/d/1IFtnCTjMw023ixJIm7QvqAQ1M5peQnchyegYs1iVfyw/edit#gid=0" target="_blank" rel="noopener">https://docs.google.com/spreadsheets/d/1IFtnCTjMw023ixJIm7QvqAQ1M5peQnchyegYs1iVfyw/edit#gid=0</a></p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gaw65cngu9j31p40u04qp.jpg" alt=""></p>
+</li>
+</ul>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><ul>
+<li>use a lot of time validating metrics</li>
+<li>define metrics; consider a lot of things</li>
+<li>Sensitivity and robustness</li>
+<li>Variability: always start with a basic analytical estimated variability</li>
+<li>Necassary: sanity checking</li>
+<li>how these metrics perform in practice: anything not taken into consideration and influence the metrics; peoples’ behaviors may shift through time or after some change</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/course-notes/" rel="tag"># course notes</a>
+          
+            <a href="/tags/data-analytics/" rel="tag"># data analytics</a>
+          
+            <a href="/tags/A-B-testing/" rel="tag"># A/B testing</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/22/Policy and Ethics for Experiments/" rel="next" title="Policy and Ethics for Experiments">
+                <i class="fa fa-chevron-left"></i> Policy and Ethics for Experiments
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">风真 (Cilence)</p>
+              <p class="site-description motion-element" itemprop="description">A seer to be</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/YLDAPhoenix11" title="GitHub &rarr; https://github.com/YLDAPhoenix11" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/YLDAPhoenix11" title="Twitter &rarr; https://twitter.com/YLDAPhoenix11" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.instagram.com/cilence_alina" title="Instagram &rarr; https://www.instagram.com/cilence_alina" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Choosing-and-Characterizing-metrics"><span class="nav-number">1.</span> <span class="nav-text">Choosing and Characterizing metrics</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Define"><span class="nav-number">1.1.</span> <span class="nav-text">Define</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Refining-the-customer-funnel"><span class="nav-number">1.1.1.</span> <span class="nav-text">Refining the customer funnel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Choose-metrics"><span class="nav-number">1.1.2.</span> <span class="nav-text">Choose metrics</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Techniques-for-solving-difficult-metrics"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">Techniques for solving difficult metrics</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Build-Intuition"><span class="nav-number">1.2.</span> <span class="nav-text">Build Intuition</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-of-Define-a-metric"><span class="nav-number">1.2.1.</span> <span class="nav-text">Example of Define a metric</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Filtering-and-Segmenting"><span class="nav-number">1.2.2.</span> <span class="nav-text">Filtering and Segmenting</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Examples"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">Examples:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary-Metrics"><span class="nav-number">1.2.3.</span> <span class="nav-text">Summary Metrics</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sensititvity-and-robustness"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">sensititvity and robustness</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Characterize"><span class="nav-number">1.3.</span> <span class="nav-text">Characterize</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#variability"><span class="nav-number">1.3.1.</span> <span class="nav-text">variability</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#calculating-variability"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">calculating variability</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary"><span class="nav-number">1.4.</span> <span class="nav-text">Summary</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">风真 (Cilence)</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
