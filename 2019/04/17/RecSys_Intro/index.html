@@ -108,31 +108,25 @@
 
 
 
-  <meta name="description" content="Course note of A/B testing on Udacity: Lesson 2">
-<meta name="keywords" content="course notes,data analytics,A&#x2F;B testing">
+  <meta name="description" content="Course note: overview of Recommender systems">
+<meta name="keywords" content="course notes,recommender systems">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Policy and Ethics for Experiments">
-<meta property="og:url" content="http://yoursite.com/2020/03/22/Policy and Ethics for Experiments/index.html">
+<meta property="og:title" content="RecSys Intro">
+<meta property="og:url" content="http://yoursite.com/2019/04/17/RecSys_Intro/index.html">
 <meta property="og:site_name" content="Nothingness">
-<meta property="og:description" content="Course note of A/B testing on Udacity: Lesson 2">
+<meta property="og:description" content="Course note: overview of Recommender systems">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9wyu29ry7j31fh0s4tzv.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9x0wictdxj31e30rp7wh.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9x9beyh5jj31c80nc1kx.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9x9gwfw3gj31ft0qbau7.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9x9itaw4mj31eu0roe13.jpg">
-<meta property="og:updated_time" content="2020-03-22T06:48:29.589Z">
+<meta property="og:updated_time" content="2020-03-22T12:30:19.037Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Policy and Ethics for Experiments">
-<meta name="twitter:description" content="Course note of A/B testing on Udacity: Lesson 2">
-<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9wyu29ry7j31fh0s4tzv.jpg">
+<meta name="twitter:title" content="RecSys Intro">
+<meta name="twitter:description" content="Course note: overview of Recommender systems">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/03/22/Policy and Ethics for Experiments/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/17/RecSys_Intro/">
 
 
 
@@ -142,7 +136,7 @@
   };
 </script>
 
-  <title>Policy and Ethics for Experiments | Nothingness</title>
+  <title>RecSys Intro | Nothingness</title>
   
 
 
@@ -358,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/22/Policy and Ethics for Experiments/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/17/RecSys_Intro/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="风真 (Cilence)">
@@ -375,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Policy and Ethics for Experiments
+          <h1 class="post-title" itemprop="name headline">RecSys Intro
               
             
           </h1>
@@ -400,7 +394,7 @@
                 
               
 
-              <time title="Created: 2020-03-22 12:08:00" itemprop="dateCreated datePublished" datetime="2020-03-22T12:08:00+08:00">2020-03-22</time>
+              <time title="Created: 2019-04-17 18:01:32" itemprop="dateCreated datePublished" datetime="2019-04-17T18:01:32+08:00">2019-04-17</time>
             
 
             
@@ -425,7 +419,7 @@
                   , 
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/course-notes/data-analytics/" itemprop="url" rel="index"><span itemprop="name">data analytics</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/course-notes/recommender-systems/" itemprop="url" rel="index"><span itemprop="name">recommender systems</span></a></span>
 
                 
                 
@@ -459,88 +453,32 @@
       
 
       
-        <p><em>Course note of <a href="https://www.udacity.com/course/ab-testing--ud257" target="_blank" rel="noopener">A/B testing on Udacity</a>: Lesson 2</em></p>
+        <p><em>Course note: overview of Recommender systems</em></p>
 <a id="more"></a>
 <hr>
-<h1 id="Policy-and-Ethics-for-Experiments"><a href="#Policy-and-Ethics-for-Experiments" class="headerlink" title="Policy and Ethics for Experiments"></a>Policy and Ethics for Experiments</h1><h2 id="Main-principles"><a href="#Main-principles" class="headerlink" title="Main principles"></a>Main principles</h2><h3 id="1-Risk"><a href="#1-Risk" class="headerlink" title="1. Risk"></a>1. Risk</h3><blockquote>
-<p><em>what risk is the participant undertaking</em>? The main threshold is whether the risk exceeds that of “minimal risk”. Minimal risk is defined as the probability and magnitude of harm that a participant would encounter in normal daily life. The harm considered encompasses physical, psychological and emotional, social, and economic concerns. If the risk exceeds minimal risk, then informed consent is required. </p>
-</blockquote>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9wyu29ry7j31fh0s4tzv.jpg" alt=""></p>
-<ol>
-<li>adding price information is just adding public information.</li>
-<li>these information might be incorrect, thus will be harmful.  (And also they may need FDA regulation).</li>
-<li>Changing the location of the search bar may be the least risky.</li>
-</ol>
-<h3 id="2-Benefits"><a href="#2-Benefits" class="headerlink" title="2. Benefits"></a>2. Benefits</h3><blockquote>
-<p><em>what benefits might result from the study</em>? Even if the risk is minimal, how might the results help? (In most online A/B testing, the benefits are around improving the product. In other social sciences/ medicine,it will be different. ) It is important to be able to state what the benefit would be from completing the study.</p>
-</blockquote>
-<h3 id="3-Alternatives"><a href="#3-Alternatives" class="headerlink" title="3. Alternatives"></a>3. Alternatives</h3><blockquote>
-<p><em>what other choices do participants have</em>? For example, if you are testing out changes to a search engine, participants always have the choice to use another search engine. The main issue is that the fewer alternatives that participants have, the more issue that there is around coercion and whether participants really have a choice in whether to participate or not, and how that balances against the risks and benefits.</p>
-<p>In online experiments, the issues to consider are what the other alternative services that a user might have, and what the switching costs might be, in terms of time, money, information, etc.</p>
-</blockquote>
-<h3 id="4-Data-Sensitivity"><a href="#4-Data-Sensitivity" class="headerlink" title="4. Data Sensitivity"></a>4. Data Sensitivity</h3><blockquote>
-<p><em>what data is being collected, and what is the expectation of privacy and confidentiality</em>? This last question is quite nuanced, encompassing numerous questions:</p>
-<ul>
-<li>Do participants understand what data is being collected about them?</li>
-<li>What harm would befall them should that data be made public?</li>
-<li>Would they expect that data to be considered private and confidential?</li>
-</ul>
-</blockquote>
-<p><strong>Difference between pseudonymous and anonymous data</strong></p>
-<ul>
-<li><strong>Identified</strong> data means that data is stored and collected with personally identifiable information: names, IDs, Phone number… also device id in many instances.</li>
-<li><strong>Anonymous</strong> data means that data is stored and collected without any personally identifiable information. This data can be considered <strong>pseudonymous</strong> if it is stored with a randomly generated id such as a cookie that gets assigned on some event, such as the first time that a user goes to an app or website and does not have such an id stored.</li>
-<li><strong>Anonymized data</strong> is identified or anonymous data that has been looked at and guaranteed in some way that the re-identification risk is low to non-existent,</li>
-</ul>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9x0wictdxj31e30rp7wh.jpg" alt=""></p>
-<ol>
-<li>Public data and too granular for identification.</li>
-<li>Total number of visitors.</li>
-<li>Timestamps can lead id information and medical data is sensitive.</li>
-<li>Can also recover personal information, but game data is not sensitive.</li>
-<li>Too granular for identification</li>
-<li>Very sensitive.</li>
-</ol>
-<h4 id="Questions-and-Consent"><a href="#Questions-and-Consent" class="headerlink" title="Questions and Consent"></a>Questions and Consent</h4><p><strong>Questions</strong></p>
-<ol>
-<li>Are users being informed?</li>
-<li>What users identisiers are tied to the data?</li>
-<li>What type of data is being collected? - is these health or financial data be collected?</li>
-<li>What is the level of confidentiality and security? - Can anyone in the company access the data? Is the data secure with access logged?</li>
-</ol>
-<p><strong>Informed Consent</strong></p>
-<ul>
-<li>not required when minimal risk and data is not identified.</li>
-</ul>
-<h3 id="Summary-of-Principles"><a href="#Summary-of-Principles" class="headerlink" title="Summary of Principles"></a>Summary of Principles</h3><blockquote>
-<p>Our recommendation is that there should be internal reviews of all proposed studies by experts regarding the questions:</p>
-<ul>
-<li>Are participants facing more than minimal risk?</li>
-<li>Do participants understand what data is being gathered?</li>
-<li>Is that data identifiable?</li>
-<li>How is the data handled?</li>
-</ul>
-<p>And if enough flags are raised, that an external review happen.</p>
-</blockquote>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9x9beyh5jj31c80nc1kx.jpg" alt=""></p>
-<ol>
-<li>in most cases, surveys are not sensitive when no personal information is collected. In survey, users can voluteer to choose answer or not, and can also answer dishonestly. However, it is more sensitive when users can only read the articles after doing the survey.</li>
-<li>minimal risky.</li>
-<li>presentations may confuse the users. And the data collected is sensitive, which may need to be aggregated.</li>
-</ol>
-<h2 id="Internal-process"><a href="#Internal-process" class="headerlink" title="Internal process"></a>Internal process</h2><ol>
-<li>Every employee who might be involved in A/B test be educated about the ethics and the protection of the participants.</li>
-<li>All data, identified or not, be stored securely, with access limited to those who need it to complete their job. </li>
-<li>You create a clear escalation path for how to handle cases where there is even possibly more than minimal risk or data sensitivity issues.</li>
-</ol>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9x9gwfw3gj31ft0qbau7.jpg" alt=""></p>
-<ul>
-<li>list of experiments: giving the information may skew the results.</li>
-</ul>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9x9itaw4mj31eu0roe13.jpg" alt=""></p>
-<ul>
-<li>principles to upload is the prerequisites to which questions to consider when evaludating ethics</li>
-</ul>
+<h1 id="什么是推荐和推荐系统"><a href="#什么是推荐和推荐系统" class="headerlink" title="什么是推荐和推荐系统"></a>什么是推荐和推荐系统</h1><p>(<strong>待施工</strong>)</p>
+<h1 id="推荐系统要考虑的问题"><a href="#推荐系统要考虑的问题" class="headerlink" title="推荐系统要考虑的问题"></a>推荐系统要考虑的问题</h1><h2 id="用户面临的问题"><a href="#用户面临的问题" class="headerlink" title="用户面临的问题"></a>用户面临的问题</h2><h3 id="准确率-accuracy"><a href="#准确率-accuracy" class="headerlink" title="准确率 accuracy"></a>准确率 accuracy</h3><p>如何量度准确性是主要问题？KPI or Off-line test or A/B test?</p>
+<h3 id="可解释性-interpreability"><a href="#可解释性-interpreability" class="headerlink" title="可解释性 interpreability"></a>可解释性 interpreability</h3><p>用户在意可解释性吗？</p>
+<h3 id="马太效应-the-rich-get-richer"><a href="#马太效应-the-rich-get-richer" class="headerlink" title="马太效应 the rich get richer"></a>马太效应 the rich get richer</h3><p>这是一个以item为中心的反馈循环：</p>
+<p>popular items更容易被消费，然后被评高分，这使得它们更容易被推荐给用户，如此形成一个效果越来越强的正反馈循环，最终使得popular items被推荐的多，其他item被推荐的少。（这种情况同样与冷启动问题有关）</p>
+<h3 id="过滤气泡-The-filter-bubble"><a href="#过滤气泡-The-filter-bubble" class="headerlink" title="过滤气泡 The filter bubble"></a>过滤气泡 The filter bubble</h3><p>这是一个以user为中心的反馈循环：</p>
+<p>当用户始终通过个性化的行为与产品进行交互，同时推荐又缺乏多样性、比较集中时，推荐给用户的会越来越集中。常见的比如今日头条等网站上都是与自己观点一致的信息。</p>
+<p>这种情况也会出现在社交网络中，当一个社交圈里的用户都非常相似时，推荐也会逐渐局限、集中。</p>
+<h3 id="偶然性的内容-Serendipity"><a href="#偶然性的内容-Serendipity" class="headerlink" title="偶然性的内容  Serendipity"></a>偶然性的内容  Serendipity</h3><p>serenfipity 是可以给用户带来惊喜的内容。它和新颖性novelty有所不同。novelty所推荐的东西是新颖但有一定相关性的，serendipity则是偶然的、意外的。</p>
+<p>Serendipity和推荐出的东西的相似度是一个trade-off。</p>
+<h3 id="多样性-Diversity"><a href="#多样性-Diversity" class="headerlink" title="多样性 Diversity"></a>多样性 Diversity</h3><p>大多数算法把推荐出的每一个item视为一类，但是有可能推荐出的每一个item都属于一个类。可以加一个多样性参数来判断用户对于某一类更有兴趣。</p>
+<h3 id="用户的兴趣随着时间变化-Time-variance"><a href="#用户的兴趣随着时间变化-Time-variance" class="headerlink" title="用户的兴趣随着时间变化 Time-variance"></a>用户的兴趣随着时间变化 Time-variance</h3><p>随着时间变化，用户可能对某一类感兴趣或者失去了兴趣，也可能其兴趣在好几个类中不断地变来变去</p>
+<h3 id="渴望的-vs-实际的-aspirational-vs-actual"><a href="#渴望的-vs-实际的-aspirational-vs-actual" class="headerlink" title="渴望的 vs.  实际的 aspirational vs actual"></a>渴望的 vs.  实际的 aspirational vs actual</h3><p>用户的评分可能不是反映他们实际上会消费购买的，而是反映他们想要的。</p>
+<p><a href="https://medium.com/the-graph/recommendations-spotify-actual-versus-aspirational-behaviour-85f1c481ffe" target="_blank" rel="noopener">一篇medium文章谈到了这个</a></p>
+<h2 id="工程中的问题"><a href="#工程中的问题" class="headerlink" title="工程中的问题"></a>工程中的问题</h2><h3 id="冷启动-cold-start"><a href="#冷启动-cold-start" class="headerlink" title="冷启动 cold-start"></a>冷启动 cold-start</h3><p>针对新加入的item：基于内容的推荐 content based等</p>
+<p>针对新加入的user：基于地理位置location based, 用户描述user description 等</p>
+<h3 id="可扩展性-Scalability"><a href="#可扩展性-Scalability" class="headerlink" title="可扩展性 Scalability"></a>可扩展性 Scalability</h3><p>在实际使用中机器学习算法必须考虑大数据的问题。有些算法能更好的处理大数据。通常我们需要在速度和准确度之间进行取舍。</p>
+<h3 id="实时-vs-批次-Real-time-vs-Batch"><a href="#实时-vs-批次-Real-time-vs-Batch" class="headerlink" title="实时 vs 批次 Real-time vs. Batch"></a>实时 vs 批次 Real-time vs. Batch</h3><p>分批次处理的系统可以处理更多的信息，获得更高的准确度；但是，实时系统可以获得更新的信息，对用户的行为立即作出反应。</p>
+<h3 id="要不要加新特征-add-new-feature"><a href="#要不要加新特征-add-new-feature" class="headerlink" title="要不要加新特征 add new feature"></a>要不要加新特征 add new feature</h3><p>一个推荐系统只考虑user和item之间的交互，不考虑其他信息。有时候，加入其他信息，例如item的类别等，会带来更好的效果。</p>
+<h1 id="推荐系统的两大应用场景"><a href="#推荐系统的两大应用场景" class="headerlink" title="推荐系统的两大应用场景"></a>推荐系统的两大应用场景</h1><h3 id="prediction"><a href="#prediction" class="headerlink" title="prediction"></a>prediction</h3><p>评分预测</p>
+<h3 id="ranking"><a href="#ranking" class="headerlink" title="ranking"></a>ranking</h3><p>TOP-N 推荐</p>
+<h1 id="推荐系统常用算法分类"><a href="#推荐系统常用算法分类" class="headerlink" title="推荐系统常用算法分类"></a>推荐系统常用算法分类</h1><h3 id="Behavior-based"><a href="#Behavior-based" class="headerlink" title="Behavior-based"></a>Behavior-based</h3><p>又可以分为memory-based和model-based</p>
+<h3 id="Content-based"><a href="#Content-based" class="headerlink" title="Content-based"></a>Content-based</h3><p>(<strong>待施工</strong>)</p>
 
       
     </div>
@@ -566,9 +504,7 @@
           
             <a href="/tags/course-notes/" rel="tag"># course notes</a>
           
-            <a href="/tags/data-analytics/" rel="tag"># data analytics</a>
-          
-            <a href="/tags/A-B-testing/" rel="tag"># A/B testing</a>
+            <a href="/tags/recommender-systems/" rel="tag"># recommender systems</a>
           
         </div>
       
@@ -581,8 +517,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/19/Overview of A:B Testing/" rel="next" title="Overview of A/B Testing">
-                <i class="fa fa-chevron-left"></i> Overview of A/B Testing
+              <a href="/2019/02/06/Chapter 2_The Product Manager Role/" rel="next" title="Chapter 2 The Product Manager Role">
+                <i class="fa fa-chevron-left"></i> Chapter 2 The Product Manager Role
               </a>
             
           </div>
@@ -591,8 +527,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/03/22/Choosing and Characterizing metrics/" rel="prev" title="Choosing and Characterizing metrics">
-                Choosing and Characterizing metrics <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/17/Chapter 7 Resumes/" rel="prev" title="Chapter 7 Resumes">
+                Chapter 7 Resumes <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -797,7 +733,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Policy-and-Ethics-for-Experiments"><span class="nav-number">1.</span> <span class="nav-text">Policy and Ethics for Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Main-principles"><span class="nav-number">1.1.</span> <span class="nav-text">Main principles</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Risk"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. Risk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Benefits"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. Benefits</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Alternatives"><span class="nav-number">1.1.3.</span> <span class="nav-text">3. Alternatives</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Data-Sensitivity"><span class="nav-number">1.1.4.</span> <span class="nav-text">4. Data Sensitivity</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Questions-and-Consent"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">Questions and Consent</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary-of-Principles"><span class="nav-number">1.1.5.</span> <span class="nav-text">Summary of Principles</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Internal-process"><span class="nav-number">1.2.</span> <span class="nav-text">Internal process</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是推荐和推荐系统"><span class="nav-number">1.</span> <span class="nav-text">什么是推荐和推荐系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#推荐系统要考虑的问题"><span class="nav-number">2.</span> <span class="nav-text">推荐系统要考虑的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用户面临的问题"><span class="nav-number">2.1.</span> <span class="nav-text">用户面临的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准确率-accuracy"><span class="nav-number">2.1.1.</span> <span class="nav-text">准确率 accuracy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可解释性-interpreability"><span class="nav-number">2.1.2.</span> <span class="nav-text">可解释性 interpreability</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#马太效应-the-rich-get-richer"><span class="nav-number">2.1.3.</span> <span class="nav-text">马太效应 the rich get richer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过滤气泡-The-filter-bubble"><span class="nav-number">2.1.4.</span> <span class="nav-text">过滤气泡 The filter bubble</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#偶然性的内容-Serendipity"><span class="nav-number">2.1.5.</span> <span class="nav-text">偶然性的内容  Serendipity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多样性-Diversity"><span class="nav-number">2.1.6.</span> <span class="nav-text">多样性 Diversity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户的兴趣随着时间变化-Time-variance"><span class="nav-number">2.1.7.</span> <span class="nav-text">用户的兴趣随着时间变化 Time-variance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渴望的-vs-实际的-aspirational-vs-actual"><span class="nav-number">2.1.8.</span> <span class="nav-text">渴望的 vs.  实际的 aspirational vs actual</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工程中的问题"><span class="nav-number">2.2.</span> <span class="nav-text">工程中的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#冷启动-cold-start"><span class="nav-number">2.2.1.</span> <span class="nav-text">冷启动 cold-start</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可扩展性-Scalability"><span class="nav-number">2.2.2.</span> <span class="nav-text">可扩展性 Scalability</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实时-vs-批次-Real-time-vs-Batch"><span class="nav-number">2.2.3.</span> <span class="nav-text">实时 vs 批次 Real-time vs. Batch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#要不要加新特征-add-new-feature"><span class="nav-number">2.2.4.</span> <span class="nav-text">要不要加新特征 add new feature</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#推荐系统的两大应用场景"><span class="nav-number">3.</span> <span class="nav-text">推荐系统的两大应用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#prediction"><span class="nav-number">3.0.1.</span> <span class="nav-text">prediction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ranking"><span class="nav-number">3.0.2.</span> <span class="nav-text">ranking</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#推荐系统常用算法分类"><span class="nav-number">4.</span> <span class="nav-text">推荐系统常用算法分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Behavior-based"><span class="nav-number">4.0.1.</span> <span class="nav-text">Behavior-based</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Content-based"><span class="nav-number">4.0.2.</span> <span class="nav-text">Content-based</span></a></li></ol></li></div>
             
 
           </div>
